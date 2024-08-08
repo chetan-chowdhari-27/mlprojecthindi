@@ -5,8 +5,6 @@ import logging
 logging.basicConfig(level=logging.INFO)
 
 project_name = "ML_Project"
-# project_dir = "C:\Users\win10\Desktop\Projects\" + project_name
-# C:\Users\win10\Desktop\Projects\ML_Project\template.py 
 list_of_files = [
     # ".github/{project_name}/.gitkeep",
     f'src/{project_name}/__init__.py',
@@ -31,7 +29,7 @@ list_of_files = [
 for filepath in list_of_files:
     filepath = Path(filepath)
     filedir, filename = os.path.split(filepath)
-    if filepath != "":
+    if filedir != "":
         os.makedirs(filedir, exist_ok=True)
         logging.info(f"creating directory: {filedir} for the file {filename}")
 
